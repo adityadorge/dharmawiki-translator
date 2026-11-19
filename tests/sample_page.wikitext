@@ -1,0 +1,22 @@
+{{NeedCitation}}__NOTOC__
+'''Ayu''' (Samskrit: आयुः) is the [[Samskrit]] term which refers to 'Life' or 'Lifespan' of an individual, as described in [[Charaka Samhita (चरक संहिता)|Charaka Samhita]].<ref>Charaka Samhita, Sutrasthana 1.41 <nowiki>https://example.org/x</nowiki></ref>
+
+== परिचयः ॥ Introduction ==
+The concept of Ayu is central to [[Ayurveda]] and is discussed in many texts.[5]
+<blockquote>शरीरेन्द्रियसत्त्वात्मसंयोगो धारि जीवितम्। नित्यगश्चानुबन्धश्च पर्यायैरायुरुच्यते॥ (Char. Samh. 1.42)<br>
+śarīrendriyasattvātmasaṃyogo dhāri jīvitam। nityagaścānubandhaśca paryāyairāyurucyate॥</blockquote>
+<blockquote>''Meaning:'' The union of body, senses, mind and soul is called Ayu.</blockquote>
+
+=== Types ===
+* Hitayu - a beneficial life
+* Sukhayu - a happy life, see [https://example.org/ayu external page]
+{| class="wikitable"
+! Type !! Description
+|-
+| Hitayu || A life that is good for society
+|}
+[[File:Ayu.png|thumb|Diagram of Ayu]]
+<!-- editor note -->
+== References ==
+<references />
+[[Category:Ayurveda]]

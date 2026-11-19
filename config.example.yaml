@@ -1,0 +1,51 @@
+# Copy to config.yaml. ${VAR} / ${VAR:-default} are read from the environment.
+wiki:
+  api_url: https://dharmawiki.org/api.php
+  username: ${WIKI_BOT_USER}          # "ParamTranslator@param" (from Special:BotPasswords)
+  password: ${WIKI_BOT_PASSWORD}
+  edit_delay: 1.0                     # seconds between edits – be gentle with the server
+  user_agent: "DharmawikiParamTranslator/1.0 (contact: admin@dharmawiki.org)"
+
+param:
+  base_url: https://llm-dev-mancha.bharatgen.dev/v1
+  api_key: ${MANCH_API_KEY}
+  model: param-translate
+  # Prompt for plain text, exactly like the API example:
+  prompt: "Translate to {lang}: {text}"
+  # Prompt when the segment contains link/markup placeholders:
+  tag_prompt: >-
+    Translate to {lang}. Keep every tag like <x id="1"/> and <g id="2">...</g> exactly as-is
+    and in the right place; translate only the text, including text inside <g> tags.
+    Keep Sanskrit words in Devanagari. Output only the translation.
+
+
+    {text}
+  temperature: 0.1
+  concurrency: 4          # parallel requests per page
+  max_chars: 1800         # longer paragraphs are split at sentence boundaries
+  timeout: 120
+
+languages:                # code -> name used in the prompt. Start with hi, add more later.
+  hi: Hindi
+  # mr: Marathi
+  # ta: Tamil
+  # te: Telugu
+  # kn: Kannada
+  # bn: Bengali
+  # gu: Gujarati
+
+pages:
+  namespaces: [0]
+  exclude_titles: ["Main Page"]                 # layout page with widgets – translate by hand
+  exclude_categories: ["Category:Hindi Articles"]
+
+titles:
+  draft: "Translation:{title}/{lang}"           # unpublished, editors review here
+  published: "{title}/{lang}"                   # public URL after review
+  draft_namespace: 3000
+
+set_page_language: true    # needs $wgPageLanguageUseDB = true
+
+state:
+  path: ${DWT_STATE_PATH:-state.sqlite}
+  s3_uri: ${STATE_S3_URI:-}                     # e.g. s3://dharmawiki-translator/state.sqlite

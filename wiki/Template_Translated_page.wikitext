@@ -1,0 +1,5 @@
+{{#if:{{{title|}}}|<div style="font-size:1.8em; font-family:serif; border-bottom:1px solid #a2a9b1; margin-bottom:.5em;">{{{title}}}</div>}}
+<div style="font-size:85%; color:#54595d; margin-bottom:1em;">This page is a translation of [[{{{source}}}]], reviewed by Dharmawiki editors.{{#if:{{{outdated|}}}|&#32;'''The original has been updated since''' ([[Special:Diff/{{{revid}}}/{{{outdated}}}|changes]]).}}</div>
+<includeonly>[[Category:Translated pages ({{{lang}}})]]{{#if:{{{outdated|}}}|[[Category:Outdated translations ({{{lang}}})]]}}</includeonly><noinclude>
+Placed on published translations by the Param translation bot. Parameters: <code>source</code>, <code>lang</code>, <code>revid</code>, <code>title</code>, <code>outdated</code>.
+</noinclude>

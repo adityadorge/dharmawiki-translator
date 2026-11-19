@@ -1,0 +1,15 @@
+<div style="border:2px solid #d33; background:#fee7e6; padding:8px 12px; margin-bottom:1em;">
+'''Machine translation – not yet published.''' This is an automatic {{#language:{{{lang|}}}|en}} translation of [[{{{source}}}]] (revision [[Special:Permalink/{{{revid}}}|{{{revid}}}]]) made with BharatGen Param.
+
+Status: '''{{{status|needs-review}}}'''. Review and correct the text below using the normal editor. When it is ready, edit this banner and change <code>status=needs-review</code> to <code>status=reviewed</code>. The page will then be published as [[{{{source}}}/{{{lang}}}]].
+{{#if:{{{outdated|}}}|<br/>'''⚠ The English page has changed since this translation was made.''' [[Special:Diff/{{{revid}}}/{{{outdated}}}|See what changed]], update the translation, then set <code>revid={{{outdated}}}</code> and remove <code>outdated</code>.}}
+</div>
+{{#if:{{{title|}}}|<div style="font-size:1.8em; font-family:serif; border-bottom:1px solid #a2a9b1; margin-bottom:.5em;">{{{title}}}</div>}}
+<includeonly>{{#switch:{{{status|needs-review}}}
+ |reviewed|approved|ready|publish=[[Category:Translations ready to publish ({{{lang}}})]]
+ |#default=[[Category:Machine translations needing review ({{{lang}}})]]
+}}{{#if:{{{outdated|}}}|[[Category:Outdated translations ({{{lang}}})]]}}</includeonly><noinclude>
+Used by the Param translation bot on draft pages in the Translation: namespace.
+
+Parameters: <code>source</code>, <code>lang</code>, <code>revid</code> (source revision translated), <code>title</code> (translated title), <code>status</code> (needs-review / reviewed), <code>outdated</code> (newer source revision, set by bot).
+</noinclude>
