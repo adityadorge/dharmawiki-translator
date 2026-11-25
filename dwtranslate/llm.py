@@ -71,7 +71,7 @@ class ParamTranslator:
 
     @staticmethod
     def _clean(out: str, src: str) -> str:
-        out = out.strip()
+        out = re.sub(r"<think>.*?</think>\s*", "", out, flags=re.S | re.I).strip()
         out = re.sub(r"^(translation|अनुवाद)\s*[:：]\s*", "", out, flags=re.I)
         if len(out) >= 2 and out[0] == out[-1] and out[0] in "\"'“”" and src[:1] not in "\"'“”":
             out = out[1:-1].strip()

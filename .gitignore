@@ -1,5 +1,6 @@
 config.yaml
 .env
+.venv/
 *.sqlite
 output/
 __pycache__/

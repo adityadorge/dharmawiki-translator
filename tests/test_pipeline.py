@@ -115,3 +115,9 @@ def test_dry_run_writes_file(tmp_path):
     r = pipe.translate_page("Ayu", dry_run=True, out_dir=str(tmp_path / "out"))
     assert r.startswith("dry-run") and "Translation:Ayu/hi" not in wiki.pages
     assert (tmp_path / "out/hi/Ayu.wikitext").exists()
+
+
+def test_clean_strips_think_tags():
+    from dwtranslate.llm import ParamTranslator
+    assert ParamTranslator._clean("<think> </think> आयु संस्कृत शब्द है।", "Ayu") == "आयु संस्कृत शब्द है।"
+    assert ParamTranslator._clean("<think>\nreasoning\n</think>\nTranslation: नमस्ते", "Hello") == "नमस्ते"
